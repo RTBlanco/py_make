@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="py_make", # Replace with your own username
+    name="py_make",
     version="0.0.1",
     author="RTBlanco",
     author_email="TODO:author@example.com",
