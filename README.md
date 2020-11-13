@@ -1,16 +1,16 @@
 # Py_make
 
-        :TODO  write a description
+:TODO  write a description
 
 
-        ## Installation
+## Installation
 
-            $ pip isntall py_make
+    $ pip isntall py_make
 
-            ## Usage
-            TODO: write quick tutorial 
+## Usage
+TODO: write quick tutorial 
 
 
-            This is a simple example package. You can use
-            [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-            to write your content.
+This is a simple example package. You can use
+[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
