@@ -1,10 +1,18 @@
 import sys
-from .writer.json_writer import update_config 
+from package import package 
+from writer.json_writer import update_config
 
-x = sys.argv[1]
 
-if x == "init":
-    update_config()
-    print(x)
-else:
-    print("nothing happend")
+
+param1 = sys.argv[1]
+project_name_input = sys.argv[2]
+version_input = sys.argv[3] if len(sys.argv) > 3 else None
+
+
+
+
+if param1 == "init":
+  update_config()
+else 
+  package(project_name_input, version_input)
+    

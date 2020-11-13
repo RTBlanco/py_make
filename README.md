@@ -1,6 +1,7 @@
 # Py_make
 
-:TODO  write a description
+`Py_Make` generates a simple python project file structure with the necessary files. 
+
 
 
 ## Installation
