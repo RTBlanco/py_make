@@ -6,7 +6,7 @@
 
 ## Installation
 
-    $ pip install py_make
+    $ pip install py-make
 
 ## Usage
 
