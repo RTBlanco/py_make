@@ -3,7 +3,7 @@ import os
 
 
 def update_config():
-  config = "py_make/config/config.json"
+  config = "py_make/py_make/config/config.json"
 
   with open(config, "r") as f:
     config_data = json.load(f)

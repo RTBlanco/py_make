@@ -3,3 +3,4 @@
 /py_make.egg-info/
 __pycache__/
 /.vscode/
+.DS_Store
