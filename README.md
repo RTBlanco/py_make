@@ -17,8 +17,8 @@ After proper installation type, `py_make init` in your terminal to initialize yo
 This will then prompt you to enter your username or name and email
 
     $ py_make init
-    [username]  <your username or name>
-    [email] <your email>
+    [Username]  <your username or name>
+    [User@email.com] <your email>
 
 - `init` is not mandatory, you will still be able to edit information in setup.py
 
