@@ -1,17 +1,30 @@
 # Py_make
 
-`Py_Make` generates a simple python project file structure with the necessary files. 
+`Py_Make` is a simple script that generates a simple python project file structure with the necessary files. 
 
 
 
 ## Installation
 
-    $ pip isntall py_make
+    $ pip install py_make
 
 ## Usage
-TODO: write quick tutorial 
 
+After proper installation type, `py_make init` in your terminal to initialize your setting 
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+    $ py_make init
+
+This will then prompt you to enter your username or name and email
+
+    $ py_make init
+    [username]  <your username or name>
+    [email] <your email>
+
+- `init` is not mandatory, you will still be able to edit information in setup.py
+
+Once py_maker is properly initialized, you will be able to generate a new package by inputting `py_make new`
+
+    $py_make new  <project name>  <version>
+
+- version is optional argument, if nothing is given `0.0.1` will be used instead
+
