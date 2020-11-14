@@ -7,7 +7,7 @@ setuptools.setup(
     name="py_make",
     version="0.0.1",
     author="RTBlanco",
-    author_email="TODO:author@example.com",
+    author_email="ronnytoribio1@hotmail.com",
     description="TODO:A small example package",
     long_description=long_description,
     long_description_content_type="text/markdown",
