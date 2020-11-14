@@ -9,7 +9,7 @@ setuptools.setup(
     version=py_make.__version__,
     author="RTBlanco",
     author_email="ronnytoribio1@hotmail.com",
-    description="TODO:A small example package",
+    description="Quick way to get started on a package!",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/RTBlanco/py_make",
