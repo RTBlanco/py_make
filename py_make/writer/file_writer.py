@@ -57,7 +57,7 @@ def readme_writer(project_name):
 
 ## Installation
 
-    $ pip isntall {project_name}
+    $ pip install {project_name}
 
 ## Usage
 TODO: write quick tutorial 
