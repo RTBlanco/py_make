@@ -1,9 +1,9 @@
 import setuptools
-
+from writer import author, author_email
 from datetime import datetime 
 
 
-def setup_writer(project_name, version, author):
+def setup_writer(project_name, version):
   return f"""with open("README.md", "r") as fh:
   long_description = fh.read()
 
@@ -11,7 +11,7 @@ def setup_writer(project_name, version, author):
   name="{project_name}",
   version="{version}",
   author="{author}",
-  author_email="TODO:author@example.com",
+  author_email="{author_email}",
   description="TODO:A small example package",
   long_description=long_description,
   long_description_content_type="text/markdown",
@@ -27,7 +27,7 @@ def setup_writer(project_name, version, author):
 
 
 
-def license_writer(author):
+def license_writer():
   return f"""Copyright (c) {datetime.now().year} {author}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,4 +68,4 @@ This is a simple example package. You can use
 to write your content."""
 
 def init_writer(version):
-    return f"__version__ = {str(version)}"
+    return f"__version__ = {version}"

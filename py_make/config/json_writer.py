@@ -3,7 +3,7 @@ import os
 
 
 def update_config():
-  config = "data/config.json"
+  config = "config.json"
 
   with open(config, "r") as f:
     config_data = json.load(f)
