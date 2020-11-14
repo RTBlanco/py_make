@@ -1,6 +1,6 @@
 import sys
-from make_package.package import package 
-from config.json_writer import update_config
+from .make_package.package import package 
+from .config.json_writer import update_config
 
 def main():
   param1 = sys.argv[1]

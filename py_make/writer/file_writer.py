@@ -1,5 +1,5 @@
 import setuptools
-from writer import author, author_email
+from py_make.writer import author, author_email
 from datetime import datetime 
 
 

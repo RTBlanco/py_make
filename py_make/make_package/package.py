@@ -1,5 +1,5 @@
 import os
-from writer.file_writer import *
+from py_make.writer.file_writer import *
 
 def package(project_name, version):
   version = version if version != None else "0.0.1"
