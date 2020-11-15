@@ -23,7 +23,7 @@ def get_dir():
 def update_config():
   data = get_dir()
 
-  if data / "config.json".exists():
+  if (data / "config.json").exists():
   
     with (data / "config.json").open("r") as f:
       config_data = json.load(f)        
