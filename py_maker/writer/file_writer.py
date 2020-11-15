@@ -77,4 +77,4 @@ This is a simple example package. You can use
 to write your content."""
 
 def init_writer(version):
-    return f"__version__ = {version}"
+    return f"__version__ = '{version}'"
