@@ -9,7 +9,7 @@ def package(project_name, version):
 
 
   setup_file = open(f"{project_name}/setup.py","w")
-  setup_file.write(setup_writer(project_name, version))
+  setup_file.write(setup_writer(project_name))
   setup_file.close()
 
 

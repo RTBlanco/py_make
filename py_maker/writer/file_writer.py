@@ -18,7 +18,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="{project_name}",
-  version="{project_name}.__version__",
+  version={project_name}.__version__,
   author="{author}",
   author_email="{author_email}",
   description="TODO:A small example package",
