@@ -8,8 +8,8 @@ def update_config():
   with open(config, "r") as f:
     config_data = json.load(f)
 
-    author = input(f'[{config_data["author"]}]  ')
-    author_email = input(f'[{config_data["author-email"]}]  ')
+    author = input(f'[{config_data["author"]}]:  ')
+    author_email = input(f'[{config_data["author-email"]}]:  ')
 
     config_data["author"] = author if author else config_data["author"]
 
