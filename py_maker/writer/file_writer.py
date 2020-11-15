@@ -1,12 +1,12 @@
 import json
 from datetime import datetime 
-from pkg_resources import resource_string as resource_bytes
+from py_maker.config.json_writer import get_dir
 
-config_file = resource_bytes('py_maker.__main__', 'config/config.json').decode("utf-8")
-config_dict = json.loads(config_file)
+with (get_dir() / "config.json").open('r',encoding='utf-8') as f:
+  config_data = json.load(f)
 
-author = config_dict["author"]
-author_email= config_dict["author-email"]
+author = config_data["author"]
+author_email = config_data["author-email"]
 
 def setup_writer(project_name):
   return f"""

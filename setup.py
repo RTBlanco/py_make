@@ -20,7 +20,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    include_package_data=True,
+    include_package_data=False,
     entry_points={
         "console_scripts": ["py_maker=py_maker.__main__:main"]
     },
