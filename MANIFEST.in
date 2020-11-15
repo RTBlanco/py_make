@@ -1,1 +1,1 @@
-include py_make/config/config.json
+include py_make/py_make/config/config.json
