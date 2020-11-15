@@ -1,7 +1,8 @@
-import setuptools, json
+import json, os
 from datetime import datetime 
 
-with open("py_make/config/config.json",'r') as config_file:
+
+with open(os.path.join("py_make","config","config.json"),'r') as config_file:
   config = json.load(config_file)
 author = config["author"]
 author_email= config["author-email"]
@@ -9,8 +10,12 @@ author_email= config["author-email"]
 
 
 def setup_writer(project_name, version):
-  return f"""with open("README.md", "r") as fh:
-  long_description = fh.read()
+  return f"""
+  import setuptools
+  import py_make
+  
+  with open("README.md", "r") as fh:
+    long_description = fh.read()
 
   setuptools.setup(
   name="{project_name}",
