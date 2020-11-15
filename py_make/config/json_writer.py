@@ -1,9 +1,9 @@
-import json
-import os
+import json, os
+
 
 
 def update_config():
-  config = os.path.join("py_make","config","config.json")
+  config = os.path.join("py_make","config.json")
 
   with open(config, "r") as f:
     config_data = json.load(f)
