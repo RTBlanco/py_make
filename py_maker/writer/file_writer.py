@@ -9,8 +9,7 @@ author = config_data["author"]
 author_email = config_data["author-email"]
 
 def setup_writer(project_name):
-  return f"""
-import setuptools
+  return f"""import setuptools
 import {project_name}
   
 with open("README.md", "r") as fh:
