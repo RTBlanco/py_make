@@ -12,7 +12,7 @@
 
 After proper installation type, `py_maker init` in your terminal to initialize your setting 
 
-    $ py_make init
+    $ py_maker init
 
 This will then prompt you to enter your username or name and email
 
