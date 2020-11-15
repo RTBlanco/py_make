@@ -1,6 +1,6 @@
 /build/
 /dist/
-/py_make.egg-info/
+/py_maker.egg-info/
 __pycache__/
 /.vscode/
 .DS_Store

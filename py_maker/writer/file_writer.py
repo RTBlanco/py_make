@@ -10,15 +10,15 @@ author_email= config_dict["author-email"]
 
 def setup_writer(project_name, version):
   return f"""
-  import setuptools
-  import py_make
+import setuptools
+import {project_name}
   
-  with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("README.md", "r") as fh:
+  long_description = fh.read()
 
-  setuptools.setup(
+setuptools.setup(
   name="{project_name}",
-  version="{version}",
+  version="{project_name}.__version__",
   author="{author}",
   author_email="{author_email}",
   description="TODO:A small example package",
@@ -32,7 +32,7 @@ def setup_writer(project_name, version):
       "Operating System :: OS Independent",
   ],
   python_requires='>=3.6',    
-  )"""
+)"""
 
 
 
