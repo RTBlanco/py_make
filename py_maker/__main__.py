@@ -1,6 +1,6 @@
 import sys
-from py_make.make_package.package import package 
-from py_make.config.json_writer import update_config
+from py_maker.make_package.package import package 
+from py_maker.config.json_writer import update_config
 
 def main():
   param1 = sys.argv[1]

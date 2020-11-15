@@ -1,5 +1,5 @@
 import os
-from py_make.writer.file_writer import setup_writer, license_writer, readme_writer, init_writer
+from py_maker.writer.file_writer import setup_writer, license_writer, readme_writer, init_writer
 
 def package(project_name, version):
   version = version if version != None else "0.0.1"

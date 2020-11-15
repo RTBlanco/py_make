@@ -1,12 +1,12 @@
 import setuptools
-import py_make
+import py_maker
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="py_make",
-    version=py_make.__version__,
+    name="py_maker",
+    version=py_maker.__version__,
     author="RTBlanco",
     author_email="ronnytoribio1@hotmail.com",
     description="Quick way to get started on a package!",
@@ -22,6 +22,6 @@ setuptools.setup(
     python_requires='>=3.6',
     include_package_data=True,
     entry_points={
-        "console_scripts": ["py_make=py_make.__main__:main"]
+        "console_scripts": ["py_maker=py_maker.__main__:main"]
     },
 )
