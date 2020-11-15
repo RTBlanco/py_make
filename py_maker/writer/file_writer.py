@@ -2,13 +2,13 @@ import json
 from datetime import datetime 
 from pkg_resources import resource_string as resource_bytes
 
-config_file = resource_bytes('py_make.__main__', 'config/config.json').decode("utf-8")
+config_file = resource_bytes('py_maker.__main__', 'config/config.json').decode("utf-8")
 config_dict = json.loads(config_file)
 
 author = config_dict["author"]
 author_email= config_dict["author-email"]
 
-def setup_writer(project_name, version):
+def setup_writer(project_name):
   return f"""
 import setuptools
 import {project_name}
