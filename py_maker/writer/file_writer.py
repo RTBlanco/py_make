@@ -8,72 +8,79 @@ with (get_dir() / "config.json").open('r',encoding='utf-8') as f:
 author = config_data["author"]
 author_email = config_data["author-email"]
 
-def setup_writer(project_name):
-  return f"""import setuptools
-import {project_name}
-  
-with open("README.md", "r") as fh:
-  long_description = fh.read()
-
-setuptools.setup(
-  name="{project_name}",
-  version={project_name}.__version__,
-  author="{author}",
-  author_email="{author_email}",
-  description="TODO:A small example package",
-  long_description=long_description,
-  long_description_content_type="text/markdown",
-  url="TODO: Enter URL",
-  packages=setuptools.find_packages(),
-  classifiers=[
-      "Programming Language :: Python :: 3",
-      "License :: OSI Approved :: MIT License",
-      "Operating System :: OS Independent",
-  ],
-  python_requires='>=3.6',    
-)"""
 
 
-
-def license_writer():
-  return f"""Copyright (c) {datetime.now().year} {author}
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE."""
+class Files:
+  def __init__(self, project):
+    self.project = project
 
 
-def readme_writer(project_name):
-  return f"""# {project_name.capitalize()}
+  def setup_writer(self):
+    return f"""import setuptools
+  import {self.project}
+    
+  with open("README.md", "r") as fh:
+    long_description = fh.read()
 
-:TODO  write a description
+  setuptools.setup(
+    name="{self.project.name}",
+    version={self.project}.__version__,
+    author="{author}",
+    author_email="{author_email}",
+    description="TODO:A small example package",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="TODO: Enter URL",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.6',    
+  )"""
 
 
-## Installation
 
-    $ pip install {project_name}
+  def license_writer():
+    return f"""Copyright (c) {datetime.now().year} {author}
 
-## Usage
-TODO: write quick tutorial 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE."""
 
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content."""
+  def readme_writer(self):
+    return f"""# {self.project.capitalize()}
 
-def init_writer(version):
-    return f"__version__ = '{version}'"
+  :TODO  write a description
+
+
+  ## Installation
+
+      $ pip install {self.project.name}
+
+  ## Usage
+  TODO: write quick tutorial 
+
+
+  This is a simple example package. You can use
+  [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+  to write your content."""
+
+  def init_writer(self):
+      return f"__version__ = '{self.project.version}'"
