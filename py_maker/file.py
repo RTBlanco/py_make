@@ -13,14 +13,12 @@ author = config_data["author"]
 author_email = config_data["author-email"]
 
 
-# TODO: Write files here 
-# make it so that the arugments are author and projects 
 class Files:
   def __init__(self, project, author):
     self.project = project
     self.author = author
 
-  def setup(self,):
+  def setup(self):
     setup = resource_bytes(__name__, 'templates/setup_template.txt').decode("utf-8")
     with open(f"{self.project.name}/setup.py", "w") as f:
       f.write(setup.format(
