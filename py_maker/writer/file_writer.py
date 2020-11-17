@@ -15,9 +15,9 @@ class Files:
     self.project = project
 
 
-  def setup_writer(self):
+  def setup(self):
     return f"""import setuptools
-  import {self.project}
+  import {self.project.name}
     
   with open("README.md", "r") as fh:
     long_description = fh.read()
