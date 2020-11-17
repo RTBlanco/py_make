@@ -23,23 +23,22 @@ def get_dir():
 def update_config():
   data = get_dir()
 
-  if (data / "config.json").exists():
   
-    with (data / "config.json").open("r") as f:
-      config_data = json.load(f)        
+  with (data / "config.json").open("r") as f:
+    config_data = json.load(f)        
 
-    author = input(f'[{config_data["author"]}]:  ')
-    author_email = input(f'[{config_data["author-email"]}]:  ')
+  author = input(f'[{config_data["author"]}]:  ')
+  author_email = input(f'[{config_data["author-email"]}]:  ')
 
-    config_data["author"] = author if author else config_data["author"]
-    config_data["author-email"] = author_email if author_email else config_data["author-email"]
+  config_data["author"] = author if author else config_data["author"]
+  config_data["author-email"] = author_email if author_email else config_data["author-email"]
+
+  os.remove(data / "config.json")
+
+  with (data / "config.json").open("w") as f:
+    json.dump(config_data, f, indent=4)
+
   
-    os.remove(data / "config.json")
-
-    with (data / "config.json").open("w") as f:
-      json.dump(config_data, f, indent=4)
-
-  else:
-    data.mkdir(parents=True)
-    with (data / "config.json").open("w") as f:
-      f.write('{"author": "Username", "author-email": "Username@email.com"}')
+  data.mkdir(parents=True)
+  with (data / "config.json").open("w") as f:
+    f.write('{"author": "Username", "author-email": "Username@email.com"}')
