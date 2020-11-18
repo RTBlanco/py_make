@@ -1,17 +1,5 @@
-import json
 from datetime import datetime
-from py_maker.make_package.package import Package 
-from py_maker.config.json_writer import get_dir
-from py_maker import Author
 from pkg_resources import resource_string as resource_bytes
-
-# TODO: create an author class 
-with (get_dir() / "config.json").open('r',encoding='utf-8') as f:
-  config_data = json.load(f)
-
-author = config_data["author"]
-author_email = config_data["author-email"]
-
 
 class Files:
   def __init__(self, project, author):

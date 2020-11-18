@@ -3,9 +3,9 @@ from py_maker.file import Files
 
 
 class Project:
-  def __init__(self, name, version, author):
+  def __init__(self, name, author, version):
     self.name = name
-    self.version = version
+    self.version = version if version == None else "0.0.1"
     self.author = author
 
 
