@@ -1,12 +1,10 @@
-from py_maker.author import Author
 import sys
-# from py_maker.make_package.package import package 
-# from py_maker.config.json_writer import update_config
-from py_maker.projects import Package
+from .author import Author
+from .projects import Package
 
 
 def main():
-  user = Author.new()
+  user = Author()
 
 
   param1 = sys.argv[1]
@@ -18,14 +16,17 @@ def main():
   if param1 == "init":
     user.update()
   else:
-    pkg = Package.new(project_name_input,version_input)
-    test = input("Create with test folder ?(y/n)")
-    
+    pkg = Package(project_name_input, user, version_input)
+
     while True:
+      test = input("Create with test folder ?(y/n)")
+      
       if test.lower() == "y" and len(test.lower()) == 1:
         pkg.make(True)
+        break
       elif test.lower() == "n" and len(test.lower()) == 1:
         pkg.make()
+        break
       else:
         print("only (y) or (n)\n")
   

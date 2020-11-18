@@ -1,4 +1,5 @@
-from py_maker.config.json_writer import get_dir
+# from py_maker.config.json_writer import get_dir
+from .author import get_dir
 
 if not (get_dir() / "config.json").exists():
   get_dir().mkdir(parents=True)
