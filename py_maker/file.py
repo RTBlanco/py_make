@@ -8,7 +8,7 @@ class Files:
 
   def setup(self):
     setup = resource_bytes(__name__, 'templates/setup_template.txt').decode("utf-8")
-    with open(f"{self.project.name}/{self.project.name}/setup.py", "w") as f:
+    with open(f"{self.project.name}/setup.py", "w") as f:
       f.write(setup.format(
         project_name = self.project.name,
         project = self.project,
@@ -18,16 +18,16 @@ class Files:
 
   def license(self):
     license = resource_bytes(__name__, 'templates/license_template.txt').decode("utf-8")
-    with open(f"{self.project.name}/{self.project.name}/LICENSE", "w") as f:
+    with open(f"{self.project.name}/LICENSE", "w") as f:
       f.write(license.format(date = datetime.now().year, author = self.author.name))
 
 
   def readme(self):
     readme = resource_bytes(__name__, 'templates/readme_template.txt').decode("utf-8")
-    with open(f"{self.project.name}/{self.project.name}/README.md", "w") as f:
+    with open(f"{self.project.name}/README.md", "w") as f:
       f.write(readme.format(project_name = self.project.name))
 
 
   def init(self):
-    with open(f"{self.project.name}/{self.project.name}/{self.project.name}/__init__.py", "w") as f:
-      f.write(f"__version__ = '{self.project.version}'")
+    with open(f"{self.project.name}/{self.project.name}/__init__.py", "w") as f:
+      f.write(f'__version__ = "{self.project.version}"')
