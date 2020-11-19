@@ -30,4 +30,4 @@ class Files:
 
   def init(self):
     with open(f"{self.project.name}/{self.project.name}/__init__.py", "w") as f:
-      f.write(f"__version__ = '{self.project.version}'")
+      f.write(f'__version__ = "{self.project.version}"')
