@@ -15,7 +15,7 @@ class Package(Project):
     pkg = Files(self, self.author)
 
     os.makedirs(f"{self.name}/{self.name}/tests") if test else os.makedirs(f"{self.name}/{self.name}")
-    os.mkdir(f"{self.name}/{self.name}/{self.name}")
+    # os.mkdir(f"{self.name}/{self.name}")
 
     pkg.init()
     pkg.license()
