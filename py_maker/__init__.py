@@ -6,4 +6,4 @@ if not (get_dir() / "config.json").exists():
   with (get_dir() / "config.json").open("w") as f:
     f.write('{"author": "Username", "author-email": "Username@email.com"}')
 
-__version__ = "0.0.7" 
+__version__ = "0.0.11" 
