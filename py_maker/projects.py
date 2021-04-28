@@ -13,8 +13,18 @@ class Package(Project):
 
   def make(self, test = False):
     pkg = Files(self, self.author)
+    
+    print(self.name)
 
+    while os.path.exists(self.name):
+      try:
+        self.name += str(int(self.name[-1]) + 1 )
+      except ValueError:
+        self.name += "1"
+
+      # self.name += "1" if self.name[-1].isnumeric() else 
     os.makedirs(f"{self.name}/{self.name}/tests") if test else os.makedirs(f"{self.name}/{self.name}")
+
 
     pkg.init()
     pkg.license()
