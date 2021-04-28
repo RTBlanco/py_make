@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 twine = "*"
+py-maker = {path = "."}
 
 [dev-packages]
 
