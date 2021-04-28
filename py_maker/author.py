@@ -3,6 +3,7 @@ from pathlib import Path
 
 
 def get_dir():
+  # This sets the config file for the respected OS
   home = os.path.realpath(os.path.expanduser("~"))
   
   if sys.platform == 'darwin':
