@@ -19,7 +19,6 @@ class Package(Project):
 
     os.makedirs(f"{self.name}/{self.name}/tests") if test else os.makedirs(f"{self.name}/{self.name}")
 
-
     pkg.init()
     pkg.license()
     pkg.readme()
