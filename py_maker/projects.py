@@ -15,14 +15,8 @@ class Package(Project):
     pkg = Files(self, self.author)
     
     print(self.name)
+    self.__iter_if_exist()
 
-    while os.path.exists(self.name):
-      try:
-        self.name.replace(self.name[-1], str(int(self.name[-1]) + 1 ))
-      except ValueError:
-        self.name += "1"
-
-      # self.name += "1" if self.name[-1].isnumeric() else 
     os.makedirs(f"{self.name}/{self.name}/tests") if test else os.makedirs(f"{self.name}/{self.name}")
 
 
@@ -30,3 +24,10 @@ class Package(Project):
     pkg.license()
     pkg.readme()
     pkg.setup()
+
+  def __iter_if_exist(self):
+    while os.path.exists(self.name):
+      try:
+        self.name = self.name.replace(self.name[-1], str(int(self.name[-1]) + 1 )) 
+      except ValueError:
+        self.name += "1"
