@@ -18,7 +18,7 @@ class Package(Project):
 
     while os.path.exists(self.name):
       try:
-        self.name += str(int(self.name[-1]) + 1 )
+        self.name.replace(self.name[-1], str(int(self.name[-1]) + 1 ))
       except ValueError:
         self.name += "1"
 
