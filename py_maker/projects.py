@@ -13,6 +13,7 @@ class Package(Project):
 
   def make(self, test = False):
     pkg = Files(self, self.author)
+    self.__iter_if_exist()
 
     os.makedirs(f"{self.name}/{self.name}/tests") if test else os.makedirs(f"{self.name}/{self.name}")
 
@@ -20,3 +21,10 @@ class Package(Project):
     pkg.license()
     pkg.readme()
     pkg.setup()
+
+  def __iter_if_exist(self):
+    while os.path.exists(self.name):
+      try:
+        self.name = self.name.replace(self.name[-1], str(int(self.name[-1]) + 1 )) 
+      except ValueError:
+        self.name += "1"
