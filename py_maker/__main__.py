@@ -30,7 +30,7 @@ def main():
       else:
         print("only (y) or (n)\n")
   elif param1.lower() == "help":
-    print("new  -  creates a new package\ninit  -  configures user data\nhelp  -  brings up the help menu")
+    print("\nnew  -  creates a new package\ninit  -  configures user data\nhelp  -  brings up the help menu\n")
   else:
     print('please Enter "new" to create a new package or "help" to bring up the help menu')
   
