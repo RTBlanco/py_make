@@ -13,7 +13,7 @@ def main():
     project_name_input = sys.argv[2] 
     version_input = sys.argv[3] if len(sys.argv) == 4 else None
 
-  if param1 == "init":
+  if param1.lower() == "init":
     user.update()
   elif param1.lower() == "new":
     pkg = Package(project_name_input, user, version_input)
@@ -29,8 +29,10 @@ def main():
         break
       else:
         print("only (y) or (n)\n")
+  elif param1.lower() == "help":
+    print("new  -  creates a new package\ninit  -  configures user data\nhelp  -  brings up the help menu")
   else:
-    print('please Enter "new" to create a new package or "init" to update author data')
+    print('please Enter "new" to create a new package or "help" to bring up the help menu')
   
 
     
