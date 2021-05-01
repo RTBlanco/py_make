@@ -29,6 +29,8 @@ def main():
         break
       else:
         print("only (y) or (n)\n")
+  else:
+    print('please Enter "new" to create a new package or "init" to update author data')
   
 
     
