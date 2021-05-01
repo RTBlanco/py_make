@@ -15,7 +15,7 @@ def main():
 
   if param1 == "init":
     user.update()
-  else:
+  elif param1.lower() == "new":
     pkg = Package(project_name_input, user, version_input)
 
     while True:
